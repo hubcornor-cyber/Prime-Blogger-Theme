@@ -14,11 +14,13 @@
       img{max-width:100%;height:auto}
 
       /* Header */
-      header.site-head{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--border)}
-      .head-wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;justify-content:space-between;padding:14px 20px}
-      .brand a{color:var(--text);font-weight:700;font-size:20px}
-      nav.pages{display:flex;gap:14px;flex-wrap:wrap}
-      nav.pages a{color:var(--text)}
+ header.site-head { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--border); }
+ .head-wrap { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 16px; justify-content: space-between; padding: 14px 20px; }
+ .brand { display: flex; align-items: center; gap: 10px; }
+ .brand img { height: 40px; width: auto; }
+ .brand a { color: var(--text); font-weight: 700; font-size: 20px; text-decoration: none; }
+ nav.pages { display: flex; gap: 14px; flex-wrap: wrap; }
+ nav.pages a { color: var(--text); text-decoration: none; }
 
       /* Main feed (full content) */
    .feed {
@@ -32,7 +34,9 @@
 /* this is post css for Card */
 
 /* Product Card */
-/* Product Card */ .product-card { max-width: 600px; margin: 20px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); overflow: hidden; position: relative; font-family: sans-serif; padding-bottom: 20px; } /* Tag */ .product-card .tag { position: absolute; top: 10px; left: 10px; background: crimson; color: #fff; font-size: 14px; padding: 4px 10px; border-radius: 6px; z-index: 2; } /* Gallery */ .gallery { text-align: center; padding: 15px; } .main-img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px; } .thumbnails { display: flex; gap: 10px; justify-content: center; margin-top: 12px; } .thumbnails img { width: 70px; height: 70px; object-fit: cover; border-radius: 6px; cursor: pointer; border: 2px solid transparent; transition: 0.3s; } .thumbnails img:hover, .thumbnails img.active { border: 2px solid #ff5722; } /* Info Section */ .product-info { padding: 20px; } .product-title { margin: 0 0 10px; font-size: 22px; font-weight: bold; } .price-box { margin: 10px 0; font-size: 20px; } .price { color: #27ae60; font-weight: bold; margin-right: 10px; } .old-price { text-decoration: line-through; color: #888; font-size: 16px; } /* Options */ .options { margin: 15px 0; } .options select { padding: 6px; border-radius: 6px; border: 1px solid #ccc; } /* Quantity */ .qty-box { display: flex; align-items: center; gap: 10px; margin: 15px 0; } .qty-box input { width: 60px; text-align: center; padding: 6px; border: 1px solid #ccc; border-radius: 6px; } .qty-btn { padding: 6px 12px; border: none; background: #eee; cursor: pointer; border-radius: 6px; font-size: 18px; } .qty-btn:hover { background: #ddd; } /* Buy Now Button */ .buy-btn { display: inline-block; width: 100%; text-align: center; background: #ff5722; color: #fff; padding: 12px; font-size: 18px; border-radius: 8px; text-decoration: none; margin: 15px 0; transition: 0.3s; } .buy-btn:hover { background: #e64a19; } /* Details */ .details { font-size: 15px; color: #444; line-height: 1.6; } /* Responsive */ @media (max-width: 500px) { .product-title { font-size: 18px; } .price-box { font-size: 18px; } .buy-btn { font-size: 16px; } .thumbnails img { width: 50px; height: 50px; } }
+/* Product Card */ .product-card { max-width: 600px; margin: 20px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); overflow: hidden; position: relative; font-family: sans-serif; padding-bottom: 20px; } /* Tag */ .product-card .tag { position: absolute; top: 10px; left: 10px; background: crimson; color: #fff; font-size: 14px; padding: 4px 10px; border-radius: 6px; z-index: 2; } /* Gallery */ .gallery { text-align: center; padding: 15px; }  
+
+.main-img { width: 100%; height: 350px; object-fit: cover; border-radius: 10px; }  .thumbnails { display: flex; gap: 10px; justify-content: center; margin-top: 12px; } .thumbnails img { width: 70px; height: 70px; object-fit: cover; border-radius: 6px; cursor: pointer; border: 2px solid transparent; transition: 0.3s; } .thumbnails img:hover, .thumbnails img.active { border: 2px solid #ff5722; } /* Info Section */ .product-info { padding: 20px; } .product-title { margin: 0 0 10px; font-size: 22px; font-weight: bold; } .price-box { margin: 10px 0; font-size: 20px; } .price { color: #27ae60; font-weight: bold; margin-right: 10px; } .old-price { text-decoration: line-through; color: #888; font-size: 16px; } /* Options */ .options { margin: 15px 0; } .options select { padding: 6px; border-radius: 6px; border: 1px solid #ccc; } /* Quantity */ .qty-box { display: flex; align-items: center; gap: 10px; margin: 15px 0; } .qty-box input { width: 60px; text-align: center; padding: 6px; border: 1px solid #ccc; border-radius: 6px; } .qty-btn { padding: 6px 12px; border: none; background: #eee; cursor: pointer; border-radius: 6px; font-size: 18px; } .qty-btn:hover { background: #ddd; } /* Buy Now Button */ .buy-btn { display: inline-block; width: 100%; text-align: center; background: #ff5722; color: #fff; padding: 12px; font-size: 18px; border-radius: 8px; text-decoration: none; margin: 15px 0; transition: 0.3s; } .buy-btn:hover { background: #e64a19; } /* Details */ .details { font-size: 15px; color: #444; line-height: 1.6; } /* Responsive */ @media (max-width: 500px) { .product-title { font-size: 18px; } .price-box { font-size: 18px; } .buy-btn { font-size: 16px; } .thumbnails img { width: 50px; height: 50px; } }
 /* upside  post css */
 
 
@@ -58,29 +62,52 @@ article.post-full{background:var(--paper);border:1px solid var(--border);border-
 
   <body>
     <!-- HEADER -->
-    <header class='site-head'>
-      <div class='head-wrap'>
-        <div class='brand'>
-          <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
-        </div>
-        <nav class='pages'>
-          <b:section class='topnav' id='topnav' showaddelement='yes'>
-            <b:widget id='BloggerButton1' locked='false' title='' type='BloggerButton' visible='true'>
-              <b:widget-settings>
-                <b:widget-setting name='button'>https://resources.blogblog.com/html/buttons/blogger-simple-kahki.gif</b:widget-setting>
-              </b:widget-settings>
-              <b:includable id='main'>
- <div class='widget-content'>
-    <a href='https://www.blogger.com' rel='nofollow'>
-      <img alt='Powered by Blogger' expr:src='data:source' expr:srcset='data:srcset' width='128'/>
-    </a>
+   <header class='site-head'>
+  <div class='head-wrap'>
+
+    <!-- Logo + Title -->
+    <div class='brand'>
+      <b:section class='logo-section' id='logo' maxwidgets='1' showaddelement='yes'>
+        <b:widget id='Image1' locked='false' title='' type='Image' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEgdD3zbd9lbTzNSs-CKfoNFMcEVYi26h9iacl--nxlBH86_ge7zG9q3OUFq2IWSCagJ8UtK3mmEnmWRiTfbgThCJlCE3gbd-xGpknpBFfH41GsLNuVcBg3cKKmR87KO6KZPMPmQlPzDt7WLlw18oZl0AQHV9wazEpd77mTWYQCBv-SJMPm9p-jfpiCKxyw=s220</b:widget-setting>
+            <b:widget-setting name='displayHeight'>200</b:widget-setting>
+            <b:widget-setting name='sectionWidth'>150</b:widget-setting>
+            <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+            <b:widget-setting name='displayWidth'>220</b:widget-setting>
+            <b:widget-setting name='link'/>
+            <b:widget-setting name='caption'/>
+          </b:widget-settings>
+          <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+          <b:includable id='content'>
+  <div class='widget-content'>
+    <b:tag cond='data:link' expr:href='data:link' name='a'>
+      <img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_img&quot;' expr:src='data:sourceUrl' expr:width='data:width'>
+        <b:attr cond='data:sourceSet' expr:value='data:sourceSet' name='srcset'/>
+      </img>
+    </b:tag>
+    <br/>
+    <b:if cond='data:caption'>
+      <span class='caption'><data:caption/></span>
+    </b:if>
   </div>
 </b:includable>
-            </b:widget>
-          </b:section>
-        </nav>
-      </div>
-    </header>
+        </b:widget>
+      </b:section>
+      <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class='pages'>
+      <b:section class='topnav' id='topnav' showaddelement='yes'/>
+    </nav>
+
+  </div>
+</header>
+
 
     <!-- MAIN -->
     <main>
