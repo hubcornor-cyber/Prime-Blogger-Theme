@@ -1,70 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Product Post Generator</title>
+
+  <!-- Font Awesome for preview icons (the generated HTML assumes your Blogger theme loads FA) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
   <style>
     body {font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px;}
     h1 {text-align: center;}
     .form-container {
-      max-width: 700px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      max-width: 700px; margin: auto; background: #fff; padding: 20px;
+      border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1);
     }
     label {display: block; margin-top: 10px; font-weight: bold;}
     input[type="text"], input[type="number"], textarea, select {
       width: 100%; padding: 8px; margin-top: 5px;
       border: 1px solid #ccc; border-radius: 6px;
     }
-    textarea {height: 80px;}
-    .checkbox-group {display: flex; gap: 10px; margin-top: 5px;}
+    textarea {height: 100px;}
+    select[multiple] {height: 120px;}
+    .checkbox-group {display: flex; gap: 10px; margin-top: 5px; flex-wrap: wrap;}
+    .actions {display:flex; gap:10px; flex-wrap:wrap;}
     button {
-      margin-top: 15px; padding: 10px 15px;
-      border: none; border-radius: 8px;
+      margin-top: 15px; padding: 10px 15px; border: none; border-radius: 8px;
       background: #007bff; color: #fff; cursor: pointer;
     }
     button:hover {background: #0056b3;}
     #output {
-      margin-top: 25px; padding: 15px;
-      background: #272822; color: #f8f8f2;
-      font-family: monospace; font-size: 14px;
-      border-radius: 8px; white-space: pre-wrap;
-      overflow-x: auto;
+      max-width: 100%; margin: 25px auto 0; padding: 15px;
+      background: #272822; color: #f8f8f2; font-family: monospace; font-size: 14px;
+      border-radius: 8px; white-space: pre-wrap; overflow-x: auto;
     }
     .preview {
-      margin-top: 30px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      margin-top: 30px; padding: 20px; background: #fff;
+      border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
-    /* --- Product Card Preview Styles --- */
-    /* Product Card */ .product-card { max-width: 600px; margin: 20px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); overflow: hidden; position: relative; font-family: sans-serif; padding-bottom: 20px; } /* Tag */ .product-card .tag { position: absolute; top: 10px; left: 10px; background: crimson; color: #fff; font-size: 14px; padding: 4px 10px; border-radius: 6px; z-index: 2; } /* Gallery */ .gallery { text-align: center; padding: 15px; }
-    .main-img { width: 100%; height: 350px; object-fit: cover; border-radius: 10px; } .thumbnails { display: flex; gap: 10px; justify-content: center; margin-top: 12px; } .thumbnails img { width: 70px; height: 70px; object-fit: cover; border-radius: 6px; cursor: pointer; border: 2px solid transparent; transition: 0.3s; } .thumbnails img:hover, .thumbnails img.active { border: 2px solid #ff5722; } /* Info Section */ .product-info { padding: 20px; } .product-title { margin: 0 0 10px; font-size: 22px; font-weight: bold; } .price-box { margin: 10px 0; font-size: 20px; } .price { color: #27ae60; font-weight: bold; margin-right: 10px; } .old-price { text-decoration: line-through; color: #888; font-size: 16px; } /* Options */ .options { margin: 15px 0; } .options select { padding: 6px; border-radius: 6px; border: 1px solid #ccc; } /* Quantity */ .qty-box { display: flex; align-items: center; gap: 10px; margin: 15px 0; } .qty-box input { width: 60px; text-align: center; padding: 6px; border: 1px solid #ccc; border-radius: 6px; } .qty-btn { padding: 6px 12px; border: none; background: #eee; cursor: pointer; border-radius: 6px; font-size: 18px; } .qty-btn:hover { background: #ddd; } /* Buy Now Button */ .buy-btn { display: inline-block; width: 100%; text-align: center; background: #ff5722; color: #fff; padding: 12px; font-size: 18px; border-radius: 8px; text-decoration: none; margin: 15px 0; transition: 0.3s; } .buy-btn:hover { background: #e64a19; } /* Details */ .details { font-size: 15px; color: #444; line-height: 1.6; } /* Responsive */ @media (max-width: 500px) { .product-title { font-size: 18px; } .price-box { font-size: 18px; } .buy-btn { font-size: 16px; } .thumbnails img { width: 50px; height: 50px; } }
-/* upside  post css */
 
+    /* --- Product Card Preview Styles (unchanged from your version) --- */
+    /* Product Card */
+    .product-card { max-width: 600px; margin: 20px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); overflow: hidden; position: relative; font-family: sans-serif; padding-bottom: 20px; }
+    /* Tag */
+    .product-card .tag { position: absolute; top: 10px; left: 10px; background: crimson; color: #fff; font-size: 14px; padding: 4px 10px; border-radius: 6px; z-index: 2; display:inline-flex; align-items:center; gap:6px;}
+    /* Gallery */
+    .gallery { text-align: center; padding: 15px; }
+    .main-img { width: 100%; height: 350px; object-fit: cover; border-radius: 10px; }
+    .thumbnails { display: flex; gap: 10px; justify-content: center; margin-top: 12px; }
+    .thumbnails img { width: 70px; height: 70px; object-fit: cover; border-radius: 6px; cursor: pointer; border: 2px solid transparent; transition: 0.3s; }
+    .thumbnails img:hover, .thumbnails img.active { border: 2px solid #ff5722; }
+    /* Info Section */
+    .product-info { padding: 20px; }
+    .product-title { margin: 0 0 10px; font-size: 22px; font-weight: bold; }
+    .price-box { margin: 10px 0; font-size: 20px; }
+    .price { color: #27ae60; font-weight: bold; margin-right: 10px; }
+    .old-price { text-decoration: line-through; color: #888; font-size: 16px; }
+    /* Options */
+    .options { margin: 15px 0; }
+    .options select { padding: 6px; border-radius: 6px; border: 1px solid #ccc; }
+    /* Quantity */
+    .qty-box { display: flex; align-items: center; gap: 10px; margin: 15px 0; }
+    .qty-box input { width: 60px; text-align: center; padding: 6px; border: 1px solid #ccc; border-radius: 6px; }
+    .qty-btn { padding: 6px 12px; border: none; background: #eee; cursor: pointer; border-radius: 6px; font-size: 18px; }
+    .qty-btn:hover { background: #ddd; }
+    /* Buy Now Button */
+    .buy-btn { display: inline-block; width: 100%; text-align: center; background: #ff5722; color: #fff; padding: 12px; font-size: 18px; border-radius: 8px; text-decoration: none; margin: 15px 0; transition: 0.3s; }
+    .buy-btn:hover { background: #e64a19; }
+    /* Details */
+    .details { font-size: 15px; color: #444; line-height: 1.6; }
+    /* Responsive */
+    @media (max-width: 500px) {
+      .product-title { font-size: 18px; }
+      .price-box { font-size: 18px; }
+      .buy-btn { font-size: 16px; }
+      .thumbnails img { width: 50px; height: 50px; }
+    }
 
-article.post-full{background:var(--paper);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.04);overflow:hidden}
-      .post-pad{padding:20px}
-      .post-title{margin:0 0 8px;font-size:26px;line-height:1.26}
-      .meta{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 12px}
-      .chip{display:inline-block;background:#f0f2f5;color:#444;border:1px solid var(--border);padding:2px 8px;border-radius:999px;font-size:12px}
-      .post-body{line-height:1.7;font-size:16px;color:#2c2f33}
-
-      /* Single view article */
-      article.one{max-width:900px;margin:28px auto;background:var(--paper);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.04)}
-      article.one .post-title{font-size:30px;margin:0}
-
-      /* Footer */
-      footer.site-foot{margin-top:40px;background:#121417;color:#e8eaed}
-      .foot-wrap{max-width:1100px;margin:0 auto;padding:28px 20px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
-      .foot-wrap h3{margin:0 0 8px;font-size:16px}
-      .foot-wrap a{color:#cfd3d7;display:block;margin:4px 0}
-      @media(max-width:720px){.foot-wrap{grid-template-columns:1fr}}
+    /* --- Added: color swatches (minimal) --- */
+    .color-options { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:8px; }
+    .color-dot { width:22px; height:22px; border-radius:50%; border:2px solid #ccc; display:inline-block; }
   </style>
 </head>
 <body>
@@ -84,8 +99,14 @@ article.post-full{background:var(--paper);border:1px solid var(--border);border-
   <label>Old Price (optional):</label>
   <input type="text" id="oldPrice" placeholder="$29.99">
 
-  <label>Tag (e.g. New, Sale):</label>
-  <input type="text" id="tag" placeholder="New">
+  <label>Tags (select one or more):</label>
+  <select id="tags" multiple>
+    <option value="Hot">Hot</option>
+    <option value="New">New</option>
+    <option value="Brand">Brand</option>
+    <option value="Cart">Cart</option>
+    <option value="Sale">Sale</option>
+  </select>
 
   <label>Sizes:</label>
   <div class="checkbox-group">
@@ -95,11 +116,16 @@ article.post-full{background:var(--paper);border:1px solid var(--border);border-
     <label><input type="checkbox" value="XL"> XL</label>
   </div>
 
+  <label>Available Colors (comma separated):</label>
+  <input type="text" id="colors" value="red, blue, #ffcc00">
+
   <label>Details / Description:</label>
   <textarea id="details" placeholder="Product details..."></textarea>
 
-  <button onclick="generatePost()">Generate HTML</button>
-  <button onclick="copyOutput()">Copy HTML</button>
+  <div class="actions">
+    <button onclick="generatePost()">Generate HTML</button>
+    <button onclick="copyOutput()">Copy HTML</button>
+  </div>
 </div>
 
 <pre id="output"></pre>
@@ -107,45 +133,72 @@ article.post-full{background:var(--paper);border:1px solid var(--border);border-
 <div id="preview" class="preview"></div>
 
 <script>
-function generatePost() {
-  const title = document.getElementById("title").value;
-  let thumbnails = document.getElementById("thumbnails").value.split("\n").map(x => x.trim()).filter(x => x);
-  const price = document.getElementById("price").value;
-  const oldPrice = document.getElementById("oldPrice").value;
-  const tag = document.getElementById("tag").value;
-  const details = document.getElementById("details").value;
+function sanitizeHtml(str) {
+  return str.replace(/[<>&"]/g, s => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[s]));
+}
 
-  // If no thumbnails provided, fallback
-  if (thumbnails.length === 0) thumbnails = ["https://via.placeholder.com/400"];
+function generatePost() {
+  const title = document.getElementById("title").value.trim();
+  let thumbnails = document.getElementById("thumbnails").value.split("\n").map(x => x.trim()).filter(Boolean);
+  const price = document.getElementById("price").value.trim();
+  const oldPrice = document.getElementById("oldPrice").value.trim();
+  const details = document.getElementById("details").value.trim();
+
+  // Fallback thumbnail
+  if (thumbnails.length === 0) thumbnails = ["https://via.placeholder.com/800x600.png?text=Product+Image"];
 
   // First thumbnail is main image
   const mainImage = thumbnails[0];
 
   // Build thumbnails HTML
-  let thumbsHTML = "";
-  thumbnails.forEach(url => {
-    thumbsHTML += `<img src="${url}" onclick="changeImage(this)">\n      `;
-  });
+  const thumbsHTML = thumbnails.map(url => `<img src="${url}" onclick="changeImage(this)">`).join("\n      ");
 
-  // Get checked sizes
-  let sizes = [];
-  document.querySelectorAll(".checkbox-group input:checked").forEach(cb => {
-    sizes.push(`<option>${cb.value}</option>`);
-  });
-
-  // Build size section if sizes exist
-  let sizeSection = sizes.length > 0 ? `
+  // Sizes (optional)
+  const sizeOptions = Array.from(document.querySelectorAll(".checkbox-group input:checked")).map(cb => `<option>${cb.value}</option>`).join("\n");
+  const sizeSection = sizeOptions
+    ? `
     <div class="options">
       <label>Size:</label>
       <select>
-        ${sizes.join("\n")}
+        ${sizeOptions}
       </select>
-    </div>` : "";
+    </div>`
+    : "";
 
-  // Build final HTML
+  // Colors (comma separated → round dots)
+  const colorsInput = document.getElementById("colors").value.split(",").map(c => c.trim()).filter(Boolean);
+  const colorsHTML = colorsInput.length
+    ? `
+    <div class="options">
+      <label>Colors:</label>
+      <div class="color-options">
+        ${colorsInput.map(c => `<span class="color-dot" title="${sanitizeHtml(c)}" style="background:${c};"></span>`).join("\n        ")}
+      </div>
+    </div>`
+    : "";
+
+  // Date
+  const today = new Date().toLocaleDateString();
+
+  // Tags with Font Awesome icons (in output + preview)
+  const tagIcons = {
+    hot:  '<i class="fa-solid fa-fire"></i>',
+    new:  '<i class="fa-solid fa-star"></i>',
+    brand:'<i class="fa-solid fa-tag"></i>',
+    cart: '<i class="fa-solid fa-cart-shopping"></i>',
+    sale: '<i class="fa-solid fa-dollar-sign"></i>'
+  };
+  const selectedTags = Array.from(document.getElementById("tags").selectedOptions).map(o => o.value);
+  const tagsHTML = selectedTags.map(t => {
+    const key = t.toLowerCase();
+    const icon = tagIcons[key] || "";
+    return `<span class="tag">${icon} ${t}</span>`;
+  }).join("\n  ");
+
+  // Build final HTML snippet (to paste into Blogger post body)
   const html = `
 <div class="product-card">
-  <span class="tag">${tag}</span>
+  ${tagsHTML}
   <div class="gallery">
     <img id="mainImage" src="${mainImage}" alt="Main Image" class="main-img">
     <div class="thumbnails">
@@ -153,12 +206,13 @@ function generatePost() {
     </div>
   </div>
   <div class="product-info">
-    <h2 class="product-title">${title}</h2>
+    <h2 class="product-title">${sanitizeHtml(title)}</h2>
     <div class="price-box">
-      <span class="price">${price}</span>
-      <span class="old-price">${oldPrice}</span>
+      <span class="price">${sanitizeHtml(price)}</span>
+      <span class="old-price">${sanitizeHtml(oldPrice)}</span>
     </div>
     ${sizeSection}
+    ${colorsHTML}
     <div class="qty-box">
       <label>Qty:</label>
       <button class="qty-btn" onclick="decreaseQty(this)">-</button>
@@ -166,14 +220,15 @@ function generatePost() {
       <button class="qty-btn" onclick="increaseQty(this)">+</button>
     </div>
     <a href="#" class="buy-btn">Buy Now</a>
-    <p class="details">${details}</p>
+    <p class="details">${sanitizeHtml(details)}</p>
+    <div class="options"><span style="color:grey;">Posted At: ${today}</span></div>
   </div>
-</div>`;
+</div>`.trim();
 
-  // Show HTML
+  // Show code (escaped)
   document.getElementById("output").textContent = html;
 
-  // Show Preview
+  // Render preview (live)
   document.getElementById("preview").innerHTML = html;
 }
 
@@ -184,17 +239,18 @@ function copyOutput() {
   });
 }
 
-// Thumbnail change function for preview
+// Preview helpers (these handlers are emitted in the snippet too)
 function changeImage(el) {
-  document.getElementById("mainImage").src = el.src;
+  const main = document.getElementById("mainImage");
+  if (main) main.src = el.src;
 }
 function decreaseQty(btn) {
-  let input = btn.nextElementSibling;
-  if (input.value > 1) input.value--;
+  const input = btn.nextElementSibling;
+  if (input && +input.value > 1) input.value = (+input.value - 1);
 }
 function increaseQty(btn) {
-  let input = btn.previousElementSibling;
-  input.value++;
+  const input = btn.previousElementSibling;
+  if (input) input.value = (+input.value + 1);
 }
 </script>
 
