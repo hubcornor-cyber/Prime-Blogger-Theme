@@ -34,12 +34,12 @@
 /* this is post css for Card */
 
 /* Product Card */
-/* Product Card */ .product-card { max-width: 600px; margin: 20px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); overflow: hidden; position: relative; font-family: sans-serif; padding-bottom: 20px; } /* Tag */ .product-card .tag { position: absolute; top: 10px; left: 10px; background: crimson; color: #fff; font-size: 14px; padding: 4px 10px; border-radius: 6px; z-index: 2; } /* Gallery */ .gallery { text-align: center; padding: 15px; }  
+	.product-card { max-width: 600px; margin: 20px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); overflow: hidden; position: relative; font-family: sans-serif; padding-bottom: 20px; } /* Tag */ .product-card .tag { position: absolute; top: 10px; left: 10px; background: crimson; color: #fff; font-size: 14px; padding: 4px 10px; border-radius: 6px; z-index: 2; } /* Gallery */ .gallery { text-align: center; padding: 15px; }  
 
-.main-img { width: 100%; height: 350px; object-fit: cover; border-radius: 10px; }  .thumbnails { display: flex; gap: 10px; justify-content: center; margin-top: 12px; } .thumbnails img { width: 70px; height: 70px; object-fit: cover; border-radius: 6px; cursor: pointer; border: 2px solid transparent; transition: 0.3s; } .thumbnails img:hover, .thumbnails img.active { border: 2px solid #ff5722; } /* Info Section */ .product-info { padding: 20px; } .product-title { margin: 0 0 10px; font-size: 22px; font-weight: bold; } .price-box { margin: 10px 0; font-size: 20px; } .price { color: #27ae60; font-weight: bold; margin-right: 10px; } .old-price { text-decoration: line-through; color: #888; font-size: 16px; } /* Options */ .options { margin: 15px 0; } .options select { padding: 6px; border-radius: 6px; border: 1px solid #ccc; } /* Quantity */ .qty-box { display: flex; align-items: center; gap: 10px; margin: 15px 0; } .qty-box input { width: 60px; text-align: center; padding: 6px; border: 1px solid #ccc; border-radius: 6px; } .qty-btn { padding: 6px 12px; border: none; background: #eee; cursor: pointer; border-radius: 6px; font-size: 18px; } .qty-btn:hover { background: #ddd; } /* Buy Now Button */ .buy-btn { display: inline-block; width: 100%; text-align: center; background: #ff5722; color: #fff; padding: 12px; font-size: 18px; border-radius: 8px; text-decoration: none; margin: 15px 0; transition: 0.3s; } .buy-btn:hover { background: #e64a19; } /* Details */ .details { font-size: 15px; color: #444; line-height: 1.6; } /* Responsive */ @media (max-width: 500px) { .product-title { font-size: 18px; } .price-box { font-size: 18px; } .buy-btn { font-size: 16px; } .thumbnails img { width: 50px; height: 50px; } }
+.main-img { width: 100%; height: 350px; object-fit: cover; border-radius: 10px; }  .thumbnails { display: flex; gap: 10px; justify-content: center; margin-top: 12px; } .thumbnails img { width: 70px; height: 70px; object-fit: cover; border-radius: 6px; cursor: pointer; border: 2px solid transparent; transition: 0.3s; } .thumbnails img:hover, .thumbnails img.active { border: 2px solid #ff5722; } /* Info Section */ .product-info { padding: 20px; } .product-title { margin: 0 0 10px; font-size: 22px; font-weight: bold; } .price-box { margin: 10px 0; font-size: 20px; } .price { color: #27ae60; font-weight: bold; margin-right: 10px; } .old-price { text-decoration: line-through; color: #888; font-size: 16px; } /* Options */ .options { margin: 15px 0; } .options select { padding: 6px; border-radius: 6px; border: 1px solid #ccc; } /* Quantity */ .qty-box { display: flex; align-items: center; gap: 10px; margin: 15px 0; } .qty-box input { width: 60px; text-align: center; padding: 6px; border: 1px solid #ccc; border-radius: 6px; } .qty-btn { padding: 6px 12px; border: none; background: #eee; cursor: pointer; border-radius: 6px; font-size: 18px; } .qty-btn:hover { background: #ddd; } /* Buy Now Button */ .buy-btn { display: inline-block; width: 100%; text-align: center; background: #ff5722; color: #fff; padding: 12px; font-size: 18px; border-radius: 8px; text-decoration: none; margin: 15px 0; transition: 0.3s; } .buy-btn:hover { background: #e64a19; } /* Details */ .details { font-size: 15px; color: #444; line-height: 1.6; } /* Responsive */ @media (max-width: 500px) { .product-title { font-size: 18px; } .price-box { font-size: 18px; } .buy-btn { font-size: 16px; } .thumbnails img { width: 50px; height: 50px; } } .color-options { display: flex; gap: 8px; margin-top: 8px; } .color-dot { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ccc; display: inline-block; cursor: pointer; transition: transform 0.2s; } .color-dot:hover { transform: scale(1.1); }
 /* upside  post css */
-
-
+/* --- Header Menu Styles (Inverted) --- */ .navbar { background:#fff; /* White background */ padding:0; margin:0; } .navbar ul { list-style:none; padding:0; margin:0; display:flex; justify-content:center; } .navbar ul li { position:relative; } .navbar ul li a { display:block; padding:12px 20px; color:#000; /* Black text */ text-decoration:none; font-weight:600; transition:all .3s; } .navbar ul li a:hover { background:transparent; /* Transparent hover */ /* underline effect */ } .navbar ul li .fa-caret-down { margin-left:6px; font-size:12px; } /* --- Dropdown --- */ .navbar ul li ul { position:absolute; top:100%; left:0; background:#fff; /* White dropdown */ min-width:180px; display:none; flex-direction:column; border:1px solid #ddd; z-index:99; } .navbar ul li ul li a { padding:10px 15px; color:#000; /* Black text in dropdown */ font-weight:normal; } .navbar ul li ul li a:hover { background:transparent; } .navbar ul li:hover > ul { display:flex; } /* Responsive for mobile */ @media(max-width:768px){ .navbar ul { flex-direction:column; } .navbar ul li { width:100%; } .navbar ul li ul { position:static; border:none; } }
+ 
 article.post-full{background:var(--paper);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.04);overflow:hidden}
       .post-pad{padding:20px}
       .post-title{margin:0 0 8px;font-size:26px;line-height:1.26}
@@ -99,10 +99,86 @@ article.post-full{background:var(--paper);border:1px solid var(--border);border-
       </b:section>
       <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
     </div>
+<b:section class='social-header' id='social-header' showaddelement='yes'>
+  <b:widget id='HTML2' locked='false' title='' type='HTML' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='content'><![CDATA[<nav class="navbar">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li>
+      <a href="#">Products <i class="fa fa-caret-down"></i></a>
+      <ul>
+        <li><a href="/search/label/Clothing">Clothing</a></li>
+        <li><a href="/search/label/Electronics">Electronics</a></li>
+        <li><a href="/search/label/Accessories">Accessories</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Services <i class="fa fa-caret-down"></i></a>
+      <ul>
+        <li><a href="/p/custom-page.html">Custom Orders</a></li>
+        <li><a href="/p/shipping.html">Shipping Info</a></li>
+        <li><a href="/p/contact.html">Contact</a></li>
+      </ul>
+    </li>
+    <li><a href="/p/about.html">About</a></li>
+    <li><a href="/p/contact.html">Contact</a></li>
+  </ul>
+</nav>]]></b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+</b:includable>
+  </b:widget>
+</b:section>
 
     <!-- Navigation -->
     <nav class='pages'>
-      <b:section class='topnav' id='topnav' showaddelement='yes'/>
+      <b:section class='topnav' id='topnav' showaddelement='yes'>
+        <b:widget id='HTML1' locked='false' title='' type='HTML' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'><![CDATA[<!-- Font Awesome CDN (add once in your theme <head> if not already) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<ul style="list-style:none; padding:0; margin:0; display:flex; gap:15px;">
+  <li>
+    <a href="https://facebook.com/" target="_blank" style="color:#1877f2; font-size:24px;">
+      <i class="fab fa-facebook"></i>
+    </a>
+  </li>
+  <li>
+    <a href="https://twitter.com/" target="_blank" style="color:#1da1f2; font-size:24px;">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  <li>
+    <a href="https://instagram.com/" target="_blank" style="color:#e1306c; font-size:24px;">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </li>
+  <li>
+    <a href="https://linkedin.com/" target="_blank" style="color:#0077b5; font-size:24px;">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </li>
+  <li>
+    <a href="https://youtube.com/" target="_blank" style="color:#ff0000; font-size:24px;">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+</ul>]]></b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+</b:includable>
+        </b:widget>
+      </b:section> 
     </nav>
 
   </div>
@@ -1538,6 +1614,19 @@ function decreaseQty(btn) {
     input.value = parseInt(input.value) - 1;
   }
 }
+    // Colors
+  const colorsInput = document.getElementById(&quot;colors&quot;).value.split(&quot;,&quot;).map(c =&gt; c.trim()).filter(c =&gt; c);
+  let colorsHTML = &quot;&quot;;
+  if (colorsInput.length &gt; 0) {
+    colorsHTML = `
+    <div class='options'>
+      <label>Colors:</label>
+      <div class='color-options'>
+        ${colorsInput.map(c =&gt; `<span class='color-dot' style='background:${c};'/>`).join(&quot;&quot;)}
+      </div>
+    </div>`;
+  }
+
 </script>
 
 
